@@ -1,0 +1,17 @@
+# === SENPAI'S CORRECT TOML CONFIG ===
+
+[font]
+# Set a sane size for your MacBook
+size = 14.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"

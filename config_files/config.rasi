@@ -1,0 +1,98 @@
+/* === SENPAI'S *CORRECTED* "SOUL RED" THEME (v4) === */
+/* Colors are now in the correct * { } block! */
+
+configuration {
+    font: "JetBrainsMono Nerd Font 14";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Applications";
+    drun-display-format: "{name}";
+}
+
+/* --- GLOBAL COLORS (Must be here!) --- */
+* {
+    color-bg:       #1f1f1f;
+    color-fg:       #eeeeee;
+    color-primary:  #c01c28;
+    color-secondary:#9b1c20;
+    color-alert:    #ffb52a;
+
+    /* Default text/background for everything */
+    background-color: @color-bg;
+    text-color:       @color-fg;
+}
+
+/* --- THE "DESIGNER" LAYOUT --- */
+window {
+    /* We use the safer "border" syntax just in case */
+    border: 0px 0px 2px 0px;
+    border-color: @color-primary;
+    border-radius: 0;
+    
+    width: 100%;
+    location: north;
+    anchor: north;
+    padding: 10px;
+    children: [ mainbox ];
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+/* --- The Input Box --- */
+inputbar {
+    padding: 4px 10px;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: @color-secondary;
+    text-color: @color-fg;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 0 10px 0 0;
+}
+
+entry {
+    text-color: @color-fg;
+    placeholder-color: @color-fg;
+    placeholder: "Search...";
+}
+
+/* --- The App List --- */
+listview {
+    layout: horizontal;
+    lines: 10;
+    columns: 6;
+    padding: 10px 0 0 0;
+}
+
+element {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+element-text {
+    /* Inherit allows it to take the color of the parent (selected or normal) */
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    background-color: inherit;
+    size: 24px;
+    padding: 0 10px 0 0;
+}
+
+/* --- STATES --- */
+element selected {
+    background-color: @color-primary;
+    text-color: @color-bg;
+}
+
+element active {
+    background-color: @color-alert;
+    text-color: @color-bg;
+}
